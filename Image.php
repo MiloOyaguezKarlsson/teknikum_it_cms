@@ -37,16 +37,47 @@ class Image
     $databaseHandler = new DatabaseHandler();
     $connection = $databaseHandler->get_connection();
 
-    $sql = "INSERT INTO bilder (src, alt) VALUES ('" . $src ."', '" . $alt ."')";
-    if($connection->query($sql) === TRUE) {
+    $stmt = $connection->prepare("INSERT INTO bilder (src, alt) VALUES (?, ?)");
+    $stmt->bind_param("ss", $src, $alt);
+
+    if($stmt->execute() === TRUE) {
       return true;
     } else {
       return false;
     }
   }
 
-  function getImage() {
+  private function getImage(int $id) {
+    $databaseHandler = new DatabaseHandler();
+    $connection = $databaseHandler->get_connection();
 
+    $stmt = $conn->prepare("SELECT * FROM bilder WHERE ?");
+    $stmt->bind_param("i", $id);
+
+    $result = $stmt->execute();
+
+    if($result->num_rows > 0) {
+      return true;
+      while($row = $result->fetch_assoc()) {
+        $image->id = $row["id"];
+        $image->src = $row["src"];
+        $image->alt = $row["alt"];
+        echo $image;
+        var_dump($image);
+      }
+    } else {
+      return null;
+    }
+  }
+
+  public function getAllImages() {
+    $directory = "bilder/";
+    $images = glob($directory . "*.jpg");
+
+    foreach($images as $image)
+    {
+      echo "<img src=" . $image . ">";
+    }
   }
 }
  ?>
