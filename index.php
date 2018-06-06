@@ -6,6 +6,7 @@ require_once("Image.php");
 require_once("DatabaseHandler.php");
 
 $image;
+$login;
 
 session_start();
 
@@ -16,6 +17,12 @@ if(isset($_SESSION)) {
   }
   $connection = new DatabaseHandler();
   $image = $_SESSION["image"];
+
+  if(!$_SESSION["loggedIn"]){
+      header("Location: login.php");
+  } else {
+      echo "logged in";
+  }
 }
 
 ?>
