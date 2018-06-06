@@ -18,16 +18,13 @@ if(isset($_SESSION)) {
   }
   $connection = new DatabaseHandler();
   $image = $_SESSION["image"];
-<<<<<<< HEAD
   $imagepopup = new ImageUpload();
-=======
 
   if(!$_SESSION["loggedIn"]){
       header("Location: login.php");
   } else {
       echo "logged in";
   }
->>>>>>> 45d6e9597c2eb886aac667019c3353d9971f97b7
 }
 
 ?>
