@@ -1,0 +1,140 @@
+@primary-color: #003960;
+@secondary-color: #F4512E;
+
+div{
+    position: relative;
+}
+
+@media screen and (min-width: 1360px) {
+    .editable{
+        transition: 300ms all ease-in-out;
+    }
+
+    .editable:hover:not(:focus){
+        background-color: #f6f6f6;
+        border-radius: 4px;
+    }
+}
+
+.editFieldButton{
+    display: inline-block;
+    position: relative;
+    right: 0;
+    margin-left: auto;
+    margin-right: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 1px 1px 2px rgba(0,0,0,0.1);
+    transition: 150ms all ease-in-out;
+}
+
+.editFieldButton:hover{
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 1px 2px rgba(0,0,0,0.1), 0 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.editFieldButton:focus{
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 1px 2px rgba(0,0,0,0.1), 0 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.editFieldButton:active{
+    background-color: #e0e0e0;
+}
+
+.deleteButton{
+    display: inline-block;
+    position: absolute;
+    right: -0.75rem;
+    top: -0.75rem;
+    font-size: 1.5rem !important;
+    padding: 0;
+    border-radius: 50%;
+    background-color: transparent;
+    color: grey;
+    border:none;
+    transition: 50ms all ease-in-out;
+}
+
+.deleteButton:hover{
+    background-color: #ee0000;
+    color: white;
+}
+
+.deleteButton:focus{
+    background-color: #ee0000;
+    color: white;
+}
+
+.deleteButton:active{
+    background-color: #bb0000;
+    color: white;
+}
+
+.btn{
+    border: none;
+    background: white;
+    border-radius: 3px;
+    padding: 8px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn.flat{
+    box-shadow: none;
+    transition: 200ms all ease-in-out;
+}
+
+.btn.flat:hover{
+    background-color: @primary-color;
+    color: white;
+}
+
+.btn.flat:active{
+    background-color: #002138;
+    color: white;
+}
+
+.btn.flat.border{
+    border: 1px solid @primary-color;
+}
+
+.image-popup{
+    width: 50%;
+    height: 75%;
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 4px;
+    border: 1px solid @primary-color;
+}
+
+.image-list{
+    list-style: none;
+}
+
+.current-images{
+    height: 40%;
+    display: block;
+    position: relative;
+    border-bottom: 1px solid @primary-color;
+}
+
+.server-images{
+    height: 40%;
+    display: block;
+    position: relative;
+    border-bottom: 1px solid @primary-color;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
