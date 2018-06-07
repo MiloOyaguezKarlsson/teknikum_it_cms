@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Author: Milo Oyaguez Karlsson
+ */
+
 require_once("DatabaseHandler.php");
 
 //handle incoming events/requests
@@ -11,27 +15,36 @@ if(isset($_GET["do"])){
     }
 }
 
-
+/**
+ * Checks if user entered the correct credentials to login, if succesful sets sessionvariable loggedIn to true
+ * and redirects user to index.php if not redirects user back to login.php
+ * @return bool
+ */
 function login(){
+    //get credentials from url params
     $password = $_GET["password"];
     $username = $_GET["username"];
+    //make a connection to the database
     $databaseHandler = new DatabaseHandler();
     $connection = $databaseHandler->get_connection();
 
+    //prepare and execute select statement
     $stmt = $connection->prepare("SELECT password FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
 
+    //bind result to a variable and fetch result
     $result = "";
-
     $stmt->bind_result($result);
     $stmt->fetch();
 
-    if(!($result === null)){
+    //if result is "" no user with that username was found there fore login is incorrect
+    if(!($result === "")){
         if($result === $password){
-            //send user to the cms
+            //start session and set sessionvariable logged in to true
             session_start();
             $_SESSION["loggedIn"] = true;
+            //redirect user to index.php
             header("Location: index.php");
             return true;
         } else {
@@ -46,9 +59,15 @@ function login(){
     }
 }
 
+/**
+ * Logs the user out by unsetting the loggedIn sessionvariable and redirecting to login.php
+ */
 function logout(){
-    $_SESSION["loggedIn"] = false;
+    session_start();
+    session_destroy();
+
     header("Location: login.php");
+    var_dump( $_SESSION["loggedIn"]);
 }
 
 function postUser(){

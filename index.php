@@ -23,7 +23,10 @@ if(isset($_SESSION)) {
   if(!$_SESSION["loggedIn"]){
       header("Location: login.php");
   } else {
-      echo "logged in";
+      echo "<form action='Authorization.php'>
+<input type='submit' value='Logout'>
+<input type='hidden' name='do' value='logout'>
+</form>";
   }
 }
 
