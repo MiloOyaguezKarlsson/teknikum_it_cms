@@ -336,35 +336,140 @@ footer a{
     color: #fff;
 }
 
-/*---Media queries---*/
-@media all and (max-width: 992px) {
-    .bilder-header {
-        margin-left: 20px;
-    }
+/*---Media queries Jacob---*/
 
+.overflow {
+    overflow-x: hidden !important;
+    width: 100% !important;
+}
+
+@media all and (max-width: 992px) {
+    body {
+        overflow-x: hidden !important;
+    }
+    .navbar-collapse {
+        padding-top: 40px;
+    }
+    .navbar-header {
+        float: none !important;
+        overflow-x: hidden !important;
+    }
+    .navbar .navbar-fixed-top {
+        overflow-x: hidden !important;
+    }
+    .row {
+        margin-left: 1em !important;
+        margin-right: 1em !important;
+    }
     .bilder img {
         width: 50%;
     }
 }
 
 @media all and (max-width: 768px) {
-	.part {
-		width: 100% !important;
-	}
+    body {
+        overflow-x: hidden !important;
+    }
+    .part {
+        width: 100% !important;
+    }
+    .navbar-collapse {
+        width: 100% !important;
+    }
+    .nav-justified {
+        width: 100% !important;
+        float: none !important;
+    }
+    .navbar-header {
+        float: none !important;
+        overflow-x: hidden !important;
+    }
+    .row {
+        margin-left: 2em !important;
+        margin-right: 2em !important;
+    }
+    .navbar {
+        overflow-x: hidden !important;
+    }
+    .navbar .navbar-collapse {
+        overflow-x: hidden !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    #wof .well {
+        /* till företag.php*/
+        float: none !important;
+    }
+    .bilder img {
+        width: 100%;
+    }
+    .col-xs-3 .col-md-2 .område {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    div .thumbnail p {
+        visibility: hidden !important;
+        margin-bottom: -4em !important;
+    }
+}
+
+@media all and (max-width: 480px) {
+    body {
+        overflow-x: hidden !important;
+    }
+    .part {
+        width: 100% !important;
+    }
     .navbar-collapse {
         width: 100% !important;
         margin: auto;
     }
-    .nav-justified li {
+    .nav-justified {
         width: 100% !important;
         float: none !important;
     }
+    .navbar-header {
+        float: none !important;
+        overflow-x: hidden !important;
+    }
+    .navbar {
+        overflow-x: hidden !important;
+    }
+    .nav li a {
+        padding: 10px !important;
+    }
 
-    #wof .well{ /* till företag.php*/
+    .nav-justified {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    #wof .well {
+        /* till företag.php*/
         float: none !important;
     }
 
     .bilder img {
-      width: 100%;
+        width: 100%;
+    }
+    /* --thumbnail Utbildningsinnehåll-- */
+    div .col-xs-3 .col-md-2 .område {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    div .thumbnail p {
+        visibility: hidden !important;
+        margin-bottom: -4em !important;
+    }
+
+    .nav-justified li {
+        width: 30% !important;
+        float: none !important;
+    }
+
+    /* Välkomst text */
+    #hem h1{
+        margin-top: 3em;
     }
 }

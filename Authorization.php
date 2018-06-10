@@ -76,7 +76,7 @@ function postUser(){
     $pw = password_hash("admin", PASSWORD_DEFAULT);
     $username = "admin";
 
-    $stmt = $connection->prepare("INSERT INTO users VALUES(NULL, ?, ?, 2");
+    $stmt = $connection->prepare("INSERT INTO users VALUES(NULL, ?, ?, 2)");
 
     $stmt->bind_param("ss", $username, $pw);
 
