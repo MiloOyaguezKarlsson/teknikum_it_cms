@@ -1,6 +1,8 @@
 <?php
 /**
+ * Author: Sebastian
  *
+ * Copied functions from Textredigering/connection.php
  */
 class Text
 {

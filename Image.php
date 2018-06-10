@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Author: Fia
  */
 require_once("Constants.php");
 
@@ -20,6 +20,7 @@ class Image
     </form>';
   }
 
+  // add image to IMAGE_PATH with a random number before the name to make it unique
   function addImage() {
     if(isset($_FILES["image"]["name"])) {
       $new_file_name = mt_rand(0, 9999) . strtolower($_FILES["image"]["name"]);
@@ -32,6 +33,7 @@ class Image
     }
   }
 
+  // insert image to database
   private function insertImage(string $src, string $alt) {
     $databaseHandler = new DatabaseHandler();
     $connection = $databaseHandler->get_connection();
@@ -46,6 +48,7 @@ class Image
     }
   }
 
+  //get image from database with the given id
   private function getImage(int $id) {
     $databaseHandler = new DatabaseHandler();
     $connection = $databaseHandler->get_connection();
@@ -69,6 +72,7 @@ class Image
     return $image;
   }
 
+  // get all images in the "bilder" folder
   public function getAllImages() {
     $directory = "bilder/";
     $images = glob($directory . "*.jpg");
@@ -82,6 +86,7 @@ class Image
     return $imageList;
   }
 
+  // delete image in database on the given id
   private function deleteImage(int $id) {
     $databaseHandler = new DatabaseHandler();
     $connection = $databaseHandler->get_connection();

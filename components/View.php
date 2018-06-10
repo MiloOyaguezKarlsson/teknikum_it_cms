@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Author: Fia
  */
 require_once("components.php");
 require_once("header.php");
@@ -37,17 +37,21 @@ class View
 
     $conn->close();
 
+    $args = new stdClass();
     $args->h1 = $texts["header-h1"];
     $args->h3 = $texts["header-h3"];
     $args->p = $texts["header-p"];
 
+    $args3 = new stdClass();
     $args3->h1 = $texts["about-h1"];
     $args3->h2 = $texts["about-h2"];
     $args3->p = $texts["about-p"];
     $args3->images = $slides;
 
+    $args2 = new stdClass();
     $args2 = $educations;
 
+    $args4 = new stdClass();
     $args4->h1 = $texts["companies-h1"];
     $args4->companies = $sponsors;
 

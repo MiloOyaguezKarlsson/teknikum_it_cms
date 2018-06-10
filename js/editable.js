@@ -155,4 +155,3 @@ var editEducationDiscard = function(element){
     // Remove buttons so the user can't do multiple actions at once
     removeButtons(element);
 };
-}

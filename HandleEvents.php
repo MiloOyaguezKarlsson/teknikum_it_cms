@@ -1,10 +1,7 @@
 <?php
 /**
- *
+ * Author: Fia
  */
-
- ini_set('display_errors', 1);
- error_reporting(E_ALL);
 
  require_once("Image.php");
  require_once("Text.php");
@@ -15,6 +12,7 @@
 
  session_start();
 
+// Check what function to run depending of the given query parameter
  if(isset($_SESSION) && isset($_GET["do"])) {
    if($_GET["do"] == "addImage") {
      if(!isset($_SESSION["image"])) {
