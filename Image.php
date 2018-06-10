@@ -3,7 +3,6 @@
  *
  */
 require_once("Constants.php");
-require_once("DatabaseHandler.php");
 
 class Image
 {
@@ -67,17 +66,20 @@ class Image
       return null;
     }
 
-    return
+    return $image;
   }
 
   public function getAllImages() {
     $directory = "bilder/";
     $images = glob($directory . "*.jpg");
 
+    $imageList = "";
     foreach($images as $image)
     {
-      echo "<img src=" . $image . ">";
+      $imageList .= "<li><img src=" . $image . "></li>";
     }
+
+    return $imageList;
   }
 
   private function deleteImage(int $id) {

@@ -22,7 +22,27 @@ var editfieldAccept = function(element){
     // Remove buttons so the user can't do multiple actions at once
     removeButtons(element);
 
-    // TODO: Push new text in textfield to database
+    //Id of element to save
+    var id = element.path[1].children[0].id;
+    var text = element.path[1].children[0].textContent;
+
+    console.log(id);
+
+    jQuery.ajax({
+    type: "POST",
+    url: 'HandleEvents.php?do=save',
+    dataType: 'json',
+    data: {id: id, text: text},
+
+    success: function (obj, textstatus) {
+                  if( !('error' in obj) ) {
+                      yourVariable = obj.result;
+                  }
+                  else {
+                      console.log(obj.error);
+                  }
+            }
+          });
 };
 
 // OnClick event for when a discard button is pressed for a editable textfield
@@ -30,7 +50,19 @@ var editfieldDiscard = function(element){
     // Remove buttons so the user can't do multiple actions at once
     removeButtons(element);
 
-    // TODO: Replace text in textfield with data from database
+    //Id of element to discard
+    var id = element.path[1].children[0].id;
+
+    jQuery.ajax({
+    type: "POST",
+    url: 'HandleEvents.php?do=get',
+    dataType: 'json',
+    data: {id: id},
+
+    success: function (obj, textstatus) {
+                  element.path[1].children[0].textContent = obj;
+            }
+          });
 };
 
 //Create and add new node with material icons
@@ -65,4 +97,62 @@ var removeButtons = function(element){
         }
         node.parentNode.removeChild(node);
     });
+}
+
+
+// OnClick event for when a editable Education is clicked
+var editEducationClick = function(element){
+    if(element.dataset["hasbuttons"] == "false"){
+        // Add button with a Material Icon.
+        // addIconNode: ("Icon Name", "Clicked element", "Type of node", "css Classes")
+        var closeNode = addIconNode("close", element, "button", "material-icons");
+        var acceptNode = addIconNode("check", element, "button", "material-icons");
+
+        //Set OnClick events for new buttons
+        closeNode.onclick = editEducationDiscard;
+        acceptNode.onclick = editEducationAccept;
+
+        //Tell clicked element that it now has buttons
+        element.dataset["hasbuttons"] = true;
+    }
+};
+
+// OnClick event for when a accept button is pressed for a editable textfield
+var editEducationAccept = function(element){
+    // Remove buttons so the user can't do multiple actions at once
+    removeButtons(element);
+
+    //Id of element to save
+    var thumbnails = document.getElementsByClassName("thumbnail");
+
+    console.log(thumbnails);
+    var data =[];
+
+    for (var i = 0; i < thumbnails.length; i++) {
+      var img = thumbnails[i].getElementsByTagName("img")[0];
+      var p = thumbnails[i].getElementsByTagName("p")[0];
+      var thumbnail = {
+        "img": {
+          src: img.src,
+          alt: img.alt
+        },
+        "text": p.textContent
+      }
+      data.push(thumbnail)
+    }
+    console.log(data);
+
+    jQuery.ajax({
+    type: "POST",
+    url: 'HandleEvents.php?do=saveEducation',
+    dataType: 'json',
+    data: {data: data},
+  });
+};
+
+// OnClick event for when a discard button is pressed for a editable textfield
+var editEducationDiscard = function(element){
+    // Remove buttons so the user can't do multiple actions at once
+    removeButtons(element);
+};
 }

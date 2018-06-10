@@ -16,9 +16,11 @@ class Internship extends Components
         <div class="container">
             <div class="row">
                 <div class="part col-md-6 col-sm-12">
-                    <h1 contenteditable="true">'. $args->h1 .'</h1>
+                  <div>
+                    <h1 id="internship-h1" class="editable" contenteditable="true" onclick="editfieldClick(this)" data-hasbuttons="false">'. $args->h1 .'</h1>
+                  </div>
                     <div class="divider"></div>
-                    <p contenteditable="true">'. $args->p .'</p>
+                    <p id="internship-p" class="editable" contenteditable="true" onclick="editfieldClick(this)" data-hasbuttons="false">'. $args->p .'</p>
                 </div>
 
                 <div class="part form-right col-md-6 col-sm-12">

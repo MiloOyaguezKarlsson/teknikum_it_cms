@@ -24,13 +24,19 @@ class About extends Components
 
     return '<section id="om">
         <div class="container about-text part">
-            <h1>'. $args->h1 .'</h1>
+          <div>
+              <h1 id="about-h1" class="editable" contenteditable="true" onclick="editfieldClick(this)" data-hasbuttons="false">'. $args->h1 .'</h1>
+          </div>
             <div class="divider"></div>
             <div class="row">
 
                 <div class="col-md-6">
-                    <h2>'. $args->h2 .'</h2>
-                    <p>'. $args->p .'</p>
+                  <div>
+                    <h2 id="about-h2" class="editable" contenteditable="true" onclick="editfieldClick(this)" data-hasbuttons="false">'. $args->h2 .'</h2>
+                  </div>
+                  <div>
+                    <p id="about-p" class="editable" contenteditable="true" onclick="editfieldClick(this)" data-hasbuttons="false">'. $args->p .'</p>
+                  </div>
                 </div>
                 <div class="col-md-6">
                     <div id="bildspel">

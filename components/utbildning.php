@@ -39,9 +39,9 @@ class Utbildning extends Components
   private function getComponent($component)
   {
     return '<div class="col-xs-3 col-md-2 område">
-      <div class="thumbnail">
+      <div class="thumbnail editable" id="'. $component->id .'" contenteditable="true" onclick="editEducationClick(this)" data-hasbuttons="false">
         <img src="' . $component->url . '" alt="' . $component->alt . '">
-        <p>' . $component->text .'</p>
+        <p id="text">' . $component->text .'</p>
       </div>
     </div>';
   }

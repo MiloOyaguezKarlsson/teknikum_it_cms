@@ -12,9 +12,9 @@
 
         function render()
         {
-            return "<form class='' action='index.html' method='post'>
+            return "<form class='' action='HandleEvents.php?do=addImage' method='post'>
                 <label for='fileselect'>Välj fil...</label>
-                <input type='file' name='fileselect' value='Välj fil...' multiple>
+                <input type='file' name='image' value='Välj fil...' multiple>
                 <input type='submit' name='submit' value='Välj'>
             </form>";
         }

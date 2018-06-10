@@ -13,12 +13,6 @@ class Menu extends Components
   {
     return '<nav class="navbar navbar-fixed-top">
       <div class="container">
-            <div class="navbar-header" id="navbar-header">
-              <div class="navbar-brand hide-this">
-                <img alt="'. $args->alt .'" src="'. $args->src .'">
-              </div>
-            </div>
-
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>

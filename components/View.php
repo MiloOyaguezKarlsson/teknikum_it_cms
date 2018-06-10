@@ -11,7 +11,6 @@ require_once("bilder.php");
 require_once("praktik.php");
 require_once("menu.php");
 require_once("footer.php");
-require_once("database/DatabaseHandler.php");
 require_once("fields/EducationField.php");
 require_once("fields/SponsorField.php");
 
@@ -25,12 +24,6 @@ class View
 
   public function render()
   {
-
-    $textFields = array(
-      "header-h1"
-    );
-
-
     $databaseHandler = new DatabaseHandler();
     $conn = $databaseHandler->get_connection();
 
@@ -41,8 +34,6 @@ class View
     $sponsors = $this->getSponsors($conn);
     //$images => $this->getImages($conn);
     $albums = $this->getAlbums($conn);
-
-    var_dump($albums);
 
     $conn->close();
 
@@ -60,87 +51,6 @@ class View
     $args4->h1 = $texts["companies-h1"];
     $args4->companies = $sponsors;
 
-    $args5 = array(
-      (object) [
-        "h2" => "Lorem Ipsum",
-        "p" => "Fotograf",
-        "images" => array(
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-        )
-      ],
-      (object) [
-        "h2" => "Lorem Ipsum",
-        "p" => "Fotograf",
-        "images" => array(
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-        )
-      ],
-      (object) [
-        "h2" => "Lorem Ipsum",
-        "p" => "Fotograf",
-        "images" => array(
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-          (object) [
-            "src" => "/bilder/bildspel/slide1.jpg",
-            "alt" => "image"
-          ],
-        )
-      ]
-    );
-
     $args6 = (object) [
       "h1" => $texts["internship-h1"],
       "p" => $texts["internship-p"]
@@ -148,8 +58,8 @@ class View
 
     $args7 = (object) [
       "logo" => (object) [
-        "src" => "./bilder/teknikum.it-small.svg",
-        "alt" => "teknikum.it logga"
+        "src" => $logo->src,
+        "alt" => $logo->alt
       ],
       "p" => $texts["footer-p"]
     ];
