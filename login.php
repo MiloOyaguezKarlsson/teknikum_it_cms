@@ -1,3 +1,5 @@
+<!--Author: Milo Oyaguez Karlsson-->
+<!--form to log the user in, sends to Authorization.php with username, password and do=login parameters-->
 <form action="Authorization.php">
     <label for="username">Username: </label>
     <input type="text" name="username" id="username"><br>

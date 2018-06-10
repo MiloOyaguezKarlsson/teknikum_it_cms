@@ -1,3 +1,5 @@
+// Author: Max Ångman
+
 // OnClick event for when a editable textfield is clicked
 var editfieldClick = function(element){
     if(element.dataset["hasbuttons"] == "false"){
