@@ -1,5 +1,6 @@
 .idea/*
 bilder/*
 pictures/*
+bower_components/*
 DatabaseConstants.php
 *.bat

@@ -1,0 +1,20 @@
+{
+  "name": "Teknikum.it",
+  "authors": [
+    "MiloOyaguezKarlsson <mioy97001@utb.vaxjo.se>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,0 +1,370 @@
+body {
+    background-color: #012E4D;
+}
+
+.divider {  /* div för att understryka rubriker */
+    background-color: #F4512E;
+    height: 4px;
+    width: 70px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.part {
+    padding: 40px 0;
+}
+
+.clear-both {
+  clear: both;
+}
+
+h1 {
+  text-align: center;
+}
+
+/*---CSS till menu.php---*/
+.navbar {
+    min-height: 0 !important;
+    background-color: #012E4D !important;
+    border: none !important;
+}
+
+.nav-justified li {
+    width: 20% !important;
+    float: left !important;
+}
+
+.nav-pills>li+li {
+    margin-left: 0 !important;
+}
+
+.nav li a{
+    color: white;
+    border-radius: 0 !important;
+    transition: background-color 0.5s ease;
+}
+
+.nav li.active>a {
+    background-color: #F4512E !important;
+}
+
+.nav li.active>a:hover {
+    background-color: #F4512E !important;
+}
+
+.nav li>a:hover {
+    background-color: #001D3D !important;
+}
+
+.nav li>a:active {
+    background-color: #F4512E !important;
+}
+
+.navbar-header {
+    float: none !important;
+    text-align: center;
+    position: relative;
+    height: 150px;
+}
+
+.navbar-brand {
+    float: none !important;
+}
+
+.navbar-brand>img {
+    height: 100px;
+    margin: auto;
+}
+
+.navbar-form {
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.navbar-form .form-group{
+    width: 250px;
+}
+
+.form-control {
+    border-radius: 20px !important;
+    width: 100% !important;
+}
+
+.navbar-form .btn-default{
+    background-color: transparent !important;
+    color: white;
+    border: none !important;
+    margin: 8px 0 !important;
+    margin-right: -12px !important;
+}
+
+.navbar-toggle {
+    border: none !important;
+}
+
+.navbar-toggle:hover {
+    background-color: #001D3D !important;
+}
+
+.navbar-toggle:focus {
+    background-color: transparent !important;
+}
+
+.icon-bar {
+    background-color: white !important;
+}
+
+/*---CSS till header.php---*/
+header {
+    background-color: #012E4D;
+}
+
+.jumbotron {
+    text-align: center;
+    position: relative;
+    min-height: 450px;
+    margin-bottom: 0 !important;
+}
+
+.jumbotron .container {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    height: auto;
+    width: 100%;
+    max-width: 1170px;
+}
+
+.btn-primary {
+    background-color: #012E4D !important;
+    transition: 0.3s ease;
+    padding: 10px 30px !important;
+}
+
+.btn-primary:hover {
+    background-color: #001D3D !important;
+}
+
+/* ---CSS till om.php---*/
+#om {
+  background-color: white;
+}
+.about-text{
+    margin-bottom: 100px;
+}
+
+#bildspel{
+    overflow: hidden;
+    width: 356px;
+    height: 237px;
+    margin-top: 20px;
+    margin: auto;
+}
+
+#bildspel .slides {
+    display: block;
+    width: 2000px;
+    height: 237px;
+    margin: 0;
+    padding: 0;
+}
+
+#bildspel .slide {
+    float: left;
+    list-style-type: none;
+    width: 356px;
+    height: 237px;
+}
+
+/*---CSS till utbildning.php---*/
+.utbildning {
+    background-color: #012E4D;
+    color: white;
+    text-align: center;
+}
+
+.thumbnail {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.thumbnail img {
+    margin-bottom: 20px;
+}
+
+.område {
+    display: inline-block !important;
+    float: none !important;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+
+/*---CSS till foretag.php---*/
+#wof {
+  background-color: white;
+}
+
+#wof .well{
+    text-align: center;
+    height: 200px;
+    background-color: #FFFFFF;
+    border: none;
+    margin: auto;
+}
+
+#wof .well div{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+#wof .well div img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/*---CSS till bilder.php---*/
+#bilder {
+  background-color: white;
+}
+
+.bilder-header {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 40px;
+}
+
+.bilder-header a {
+  background-color: #012E4D;
+  color: white;
+  padding: 10px 30px;
+}
+
+.bilder img {
+  display: inline-block;
+  width: 25%;
+  padding: 10px;
+}
+
+.always-show {
+  display: inline-block !important;
+}
+
+.hidden {
+  display: none;
+}
+
+/*---CSS till praktik.php---*/
+#praktik {
+    background-color: #ffffff;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+
+.container .part {
+    padding: 40px;
+}
+
+.form-right {
+    background-color: #012E4D;
+}
+
+.form-right p {
+    color: white;
+    margin: 20px 0 40px 0;
+}
+
+.form-right input, #textarea {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    width: 100%;
+    border: 2px solid #012E4D;
+    transition: 0.3s ease;
+}
+
+input:focus, #textarea:focus {
+    outline: none;
+    background-color: #efefef;
+}
+
+.form-right button {
+    background-color: #F4512E;
+    padding: 10px 30px;
+    border: none;
+    color: white;
+    transition: 0.3s ease;
+    float: right;
+}
+
+.form-right button[type="submit"]:focus {
+    outline: none;
+    background-color: #F4512E;
+    color: white;
+}
+
+/*---CSS till footer.php---*/
+footer{
+    background-color: #001D3D;
+    color: white;
+}
+
+footer img{
+    margin-top: 20px;
+}
+
+.footer-lista{
+    margin-top: 20px;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.align-right{
+    text-align: right;
+}
+
+footer .divider{
+    margin-bottom: 0px;
+}
+
+footer .col-md-3{
+    text-align: center;
+}
+
+footer a{
+    color: #fff;
+}
+
+/*---Media queries---*/
+@media all and (max-width: 992px) {
+    .bilder-header {
+        margin-left: 20px;
+    }
+
+    .bilder img {
+        width: 50%;
+    }
+}
+
+@media all and (max-width: 768px) {
+	.part {
+		width: 100% !important;
+	}
+    .navbar-collapse {
+        width: 100% !important;
+        margin: auto;
+    }
+    .nav-justified li {
+        width: 100% !important;
+        float: none !important;
+    }
+
+    #wof .well{ /* till företag.php*/
+        float: none !important;
+    }
+
+    .bilder img {
+      width: 100%;
+    }
+}
